@@ -133,14 +133,22 @@ void tabung(float r_depan, float r_belakang, float panjang)
     glPopMatrix();
 }
 
+void penyangga() {
+    glPushMatrix();
+    glTranslated(-0.05,-7,0);
+    glRotated(-90,1,0,0);
+    tabung(0.5,0.4,7);
+    glPopMatrix();
+}
+
 void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
     glMatrixMode(GL_MODELVIEW);
 
-    //dasar();
-    //tombol_kipas(-1);
-    tabung(1,0.5,4); //coba
+    dasar();
+    tombol_kipas(-1);
+    penyangga();
 
     glFlush();
     glutSwapBuffers();
