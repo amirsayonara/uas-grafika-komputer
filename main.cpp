@@ -141,6 +141,25 @@ void penyangga() {
     glPopMatrix();
 }
 
+void kepala() {
+    glPushMatrix();
+    glTranslated(0,3,-1);
+    tabung(1.5,1.5,2.5); //tempat dinamo
+    glTranslated(-0.5,-3,1);
+    glRotated(90,0,1,0);
+    tabung(0.3,0.3,1); //engsel leher
+
+    glTranslated(0,1.2,0);
+    glRotated(90,0,0,1);
+    glRotated(-90,0,1,0);
+    glTranslated(0.45,0,0);
+    tabung(0.5,0.5,1); //leher
+
+    glTranslated(1,-0.5,-4.2);
+    tabung(0.2,0.2,1); //tombol atas
+    glPopMatrix();
+}
+
 void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
@@ -149,6 +168,7 @@ void display(void)
     dasar();
     tombol_kipas(-1);
     penyangga();
+    kepala();
 
     glFlush();
     glutSwapBuffers();
