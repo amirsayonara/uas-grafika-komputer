@@ -132,6 +132,19 @@ void keyboard2(int key, int x, int y) {
     glutPostRedisplay();
 }
 
+void mouse(int button, int state, int x, int y)
+{
+    switch (button) {
+    case 3:
+        glScaled(1.05,1.05,1.05);
+        break;
+    case 4:
+        glScaled(0.95,0.95,0.95);
+        break;
+    }
+    glutPostRedisplay();
+}
+
 int main(int argc,char **argv)
 {
     glutInit(&argc,argv);
@@ -144,6 +157,7 @@ int main(int argc,char **argv)
     glutReshapeFunc(resize);
     glutKeyboardFunc(keyboard);
     glutSpecialFunc(keyboard2);
+    glutMouseFunc(mouse);
     init();
     glutMainLoop();
     return(0);
