@@ -114,6 +114,24 @@ void keyboard(unsigned char key, int x, int y)
     glutPostRedisplay();
 }
 
+void keyboard2(int key, int x, int y) {
+    switch(key) {
+    case GLUT_KEY_UP:
+        glTranslated(0,-0.5,0);
+        break;
+    case GLUT_KEY_DOWN:
+        glTranslated(0,0.5,0);
+        break;
+    case GLUT_KEY_RIGHT:
+        glTranslated(-0.5,0,0);
+        break;
+    case GLUT_KEY_LEFT:
+        glTranslated(0.5,0,0);
+        break;
+    }
+    glutPostRedisplay();
+}
+
 int main(int argc,char **argv)
 {
     glutInit(&argc,argv);
@@ -125,6 +143,7 @@ int main(int argc,char **argv)
     //glutIdleFunc(display);
     glutReshapeFunc(resize);
     glutKeyboardFunc(keyboard);
+    glutSpecialFunc(keyboard2);
     init();
     glutMainLoop();
     return(0);
