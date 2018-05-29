@@ -105,12 +105,25 @@ void dasar() {
     glPopMatrix();
 }
 
+void tombol_kipas(int tekan) {
+    glPushMatrix();
+    glTranslated(-1.5,-7,2);
+    for (int x=0; x<4; x++) {
+        if (tekan==x) glTranslated(0,-0.2,0);
+        glutSolidCube(0.5);
+        if (tekan==x) glTranslated(0,0.2,0);
+        glTranslated(1,0,0);
+    }
+    glPopMatrix();
+}
+
 void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
     glMatrixMode(GL_MODELVIEW);
 
-    dasar(); //test
+    dasar();
+    tombol_kipas(-1);
 
     glFlush();
     glutSwapBuffers();
