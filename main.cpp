@@ -188,6 +188,25 @@ void baling_baling() {
     glPopMatrix();
 }
 
+void pembungkus() {
+    glPushMatrix();
+    glTranslated(0,3,3);
+    glScaled(0.45,0.45,0.45);
+    glutWireTorus(5,7,5,80);
+    glutSolidTorus(0.5,12,10,80);
+    glTranslated(0,0,4);
+    glScaled(0.75,0.75,0.75);
+    glutSolidTorus(0.1,12,10,80);
+    //penutup depan
+    glBegin(GL_POLYGON);
+    glNormal3f(0,0,1);
+    for (float x=0.1; x<=6.28; x+=0.1) {
+        glVertex3f(sin(x)*5, cos(x)*5, 0);
+    }
+    glEnd();
+    glPopMatrix();
+}
+
 void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
@@ -198,6 +217,7 @@ void display(void)
     penyangga();
     kepala();
     baling_baling();
+    pembungkus();
 
     glFlush();
     glutSwapBuffers();
