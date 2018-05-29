@@ -80,12 +80,28 @@ void resize(int w, int h)
     //glLoadIdentity();
 }
 
+void balok(float tinggi, int lebar, int panjang)
+{
+    glPushMatrix();
+    for(float i=0; i<panjang; i++)
+    {
+        glTranslatef(-(lebar+1)*tinggi/2,0.0,0.0);
+        for(float j=0; j<lebar; j++)
+        {
+            glTranslatef(tinggi,0.0,0.0);
+            glutSolidCube(tinggi);
+        }
+        glTranslatef(-(lebar-1)*tinggi/2, 0.0,tinggi);
+    }
+    glPopMatrix();
+}
+
 void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
     glMatrixMode(GL_MODELVIEW);
 
-    glutSolidTeapot(4);
+    balok(2,5,3); //test
 
     glFlush();
     glutSwapBuffers();
