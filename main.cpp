@@ -91,6 +91,29 @@ void display(void)
     glutSwapBuffers();
 }
 
+void keyboard(unsigned char key, int x, int y)
+{
+    switch (key)
+    {
+    case 'x':
+    case 'X':
+        glRotated(1,1,0,0);
+        break;
+    case 'y':
+    case 'Y':
+        glRotated(1,0,1,0);
+        break;
+    case 'z':
+    case 'Z':
+        glRotated(1,0,0,1);
+        break;
+    case GLUT_KEY_UP:
+        cout << 1;
+        break;
+    }
+    glutPostRedisplay();
+}
+
 int main(int argc,char **argv)
 {
     glutInit(&argc,argv);
@@ -101,6 +124,7 @@ int main(int argc,char **argv)
     glutDisplayFunc(display);
     //glutIdleFunc(display);
     glutReshapeFunc(resize);
+    glutKeyboardFunc(keyboard);
     init();
     glutMainLoop();
     return(0);
