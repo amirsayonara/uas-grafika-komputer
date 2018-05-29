@@ -160,8 +160,7 @@ void kepala() {
     glPopMatrix();
 }
 
-void baling_dinamis(float jari_dalam,float jari_luar, float tebal, int banyak_baling)
-{
+void baling_dinamis(float jari_dalam,float jari_luar, float tebal, int banyak_baling) {
     float i;
     glPushMatrix();
     glTranslatef(0.0,0.0,-tebal/4);
@@ -180,16 +179,25 @@ void baling_dinamis(float jari_dalam,float jari_luar, float tebal, int banyak_ba
     glPopMatrix();
 }
 
+void baling_baling() {
+    glPushMatrix();
+    glTranslated(0,3,2.8);
+    baling_dinamis(1.2,4.5,1.2,5);
+    glTranslated(0,0,-2);
+    tabung(0.3,0.3,2); //as
+    glPopMatrix();
+}
+
 void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
     glMatrixMode(GL_MODELVIEW);
 
-//    dasar();
-//    tombol_kipas(-1);
-//    penyangga();
-//    kepala();
-    baling_dinamis(1,5,1,5); //coba
+    dasar();
+    tombol_kipas(-1);
+    penyangga();
+    kepala();
+    baling_baling();
 
     glFlush();
     glutSwapBuffers();
