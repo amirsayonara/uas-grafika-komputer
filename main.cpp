@@ -96,12 +96,21 @@ void balok(float tinggi, int lebar, int panjang)
     glPopMatrix();
 }
 
+void dasar() {
+    glPushMatrix();
+    glTranslated(0,-8,-1);
+    balok(1,7,7);
+    glTranslated(0,0.5,0);
+    balok(1,5,5);
+    glPopMatrix();
+}
+
 void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
     glMatrixMode(GL_MODELVIEW);
 
-    balok(2,5,3); //test
+    dasar(); //test
 
     glFlush();
     glutSwapBuffers();
