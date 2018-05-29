@@ -117,13 +117,30 @@ void tombol_kipas(int tekan) {
     glPopMatrix();
 }
 
+void tabung(float r_depan, float r_belakang, float panjang)
+{
+    float i;
+    glPushMatrix();
+    glTranslatef(0.0,0.0,-r_depan/4);
+    glutSolidCone(r_depan,0,32,4);
+    for(i=0; i<=panjang; i+=r_depan/8)
+    {
+        glTranslatef(0.0,0.0,r_depan/8);
+        glutSolidTorus(r_depan/4,r_depan-((i*(r_depan-r_belakang))/panjang),16,16);
+    }
+    glTranslatef(0.0,0.0,r_depan/4);
+    glutSolidCone(r_belakang,0,32,4);
+    glPopMatrix();
+}
+
 void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
     glMatrixMode(GL_MODELVIEW);
 
-    dasar();
-    tombol_kipas(-1);
+    //dasar();
+    //tombol_kipas(-1);
+    tabung(1,0.5,4); //coba
 
     glFlush();
     glutSwapBuffers();
