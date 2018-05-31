@@ -236,9 +236,9 @@ void display(void)
     glMatrixMode(GL_MODELVIEW);
 
     dasar();
-    tombol_kipas(-1, false);
+    tombol_kipas(tombol_level, tombol_stop);
     penyangga();
-    bagian_atas(45, 20, true);
+    bagian_atas(rotasi_toleh, rotasi_angguk, tekan_panel_atas);
 
     glFlush();
     glutSwapBuffers();
