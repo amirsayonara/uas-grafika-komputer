@@ -280,6 +280,10 @@ void keyboard(unsigned char key, int x, int y)
     glutPostRedisplay();
 }
 
+void idle() {
+    glutPostRedisplay();
+}
+
 void keyUP(unsigned char key, int x, int y) {
     if (key=='0') tombol_stop = false;
     glutPostRedisplay();
@@ -330,6 +334,7 @@ int main(int argc,char **argv)
     glutSpecialFunc(keyboard2);
     glutKeyboardUpFunc(keyUP);
     glutMouseFunc(mouse);
+    glutIdleFunc(idle);
     init();
     glutMainLoop();
     return(0);
