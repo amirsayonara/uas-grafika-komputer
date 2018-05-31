@@ -179,9 +179,10 @@ void baling_dinamis(float jari_dalam,float jari_luar, float tebal, int banyak_ba
     glPopMatrix();
 }
 
-void baling_baling() {
+void baling_baling(int rotasi) {
     glPushMatrix();
     glTranslated(0,3,2.8);
+    glRotated(-rotasi, 0, 0, 1);
     baling_dinamis(1.2,4.5,1.2,5);
     glTranslated(0,0,-2);
     tabung(0.3,0.3,2); //as
@@ -216,7 +217,7 @@ void display(void)
     tombol_kipas(-1, false);
     penyangga();
     kepala();
-    baling_baling();
+    baling_baling(0);
     pembungkus();
 
     glFlush();
