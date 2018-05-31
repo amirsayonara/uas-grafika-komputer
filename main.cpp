@@ -260,6 +260,18 @@ void keyboard(unsigned char key, int x, int y)
     case 'Z':
         glRotated(1,0,0,1);
         break;
+    case '1':
+        tombol_level = 0;
+        break;
+    case '2':
+        tombol_level = 1;
+        break;
+    case '3':
+        tombol_level = 2;
+        break;
+    case '0':
+        tombol_level = -1;
+        break;
     }
     glutPostRedisplay();
 }
