@@ -224,6 +224,12 @@ void bagian_atas(int rotasi_toleh, int rotasi_angguk, bool panel_penggerak) {
     glPopMatrix();
 }
 
+bool tekan_panel_atas = false, menoleh = false, tombol_stop,
+menoleh_ke_kanan = true;
+int tombol_level = -1, kecepatan_rotasi_baling = 0,
+rotasi_baling = 0, rotasi_toleh = 0,
+penambah_rotasi_toleh = 1, rotasi_angguk = 0;
+
 void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
