@@ -224,7 +224,7 @@ void bagian_atas(int rotasi_baling, int rotasi_toleh, int rotasi_angguk, bool pa
     glPopMatrix();
 }
 
-bool tekan_panel_atas = false, menoleh = false, tombol_stop,
+bool menoleh = false, tombol_stop,
 menoleh_ke_kanan = true;
 int tombol_level = -1, kecepatan_rotasi_baling = 0,
 rotasi_baling = 0, rotasi_toleh = 0,
@@ -238,7 +238,7 @@ void display(void)
     dasar();
     tombol_kipas(tombol_level, tombol_stop);
     penyangga();
-    bagian_atas(rotasi_baling, rotasi_toleh, rotasi_angguk, tekan_panel_atas);
+    bagian_atas(rotasi_baling, rotasi_toleh, rotasi_angguk, menoleh);
 
     glFlush();
     glutSwapBuffers();
@@ -273,6 +273,9 @@ void keyboard(unsigned char key, int x, int y)
         tombol_level = -1;
         tombol_stop = true;
         break;
+    case 't':
+        if (menoleh) menoleh = false;
+        else menoleh = true;
     }
     glutPostRedisplay();
 }
