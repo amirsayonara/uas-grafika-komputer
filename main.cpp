@@ -138,6 +138,11 @@ void penyangga() {
     glTranslated(-0.05,-7,0);
     glRotated(-90,1,0,0);
     tabung(0.5,0.4,7);
+
+    glRotated(90,1,0,0);
+    glTranslated(-0.45, 7.1, 0); //engsel leher
+    glRotated(90,0,1,0);
+    tabung(0.3,0.3,1);
     glPopMatrix();
 }
 
@@ -147,7 +152,6 @@ void kepala() {
     tabung(1.5,1.5,2.5); //tempat dinamo
     glTranslated(-0.5,-3,1);
     glRotated(90,0,1,0);
-    tabung(0.3,0.3,1); //engsel leher
 
     glTranslated(0,1.2,0);
     glRotated(90,0,0,1);
