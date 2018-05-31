@@ -216,8 +216,8 @@ void pembungkus() {
 void bagian_atas(int rotasi_toleh, int rotasi_angguk, bool panel_penggerak) {
     //angguk maksimal 20
     glPushMatrix();
-    glRotated(rotasi_toleh, 0, 1, 0);
     glRotated(rotasi_angguk, 1, 0, 0);
+    glRotated(rotasi_toleh, 0, 1, 0);
     kepala(panel_penggerak);
     baling_baling(0);
     pembungkus();
@@ -232,7 +232,7 @@ void display(void)
     dasar();
     tombol_kipas(-1, false);
     penyangga();
-    bagian_atas(0, 0, true);
+    bagian_atas(45, 20, true);
 
     glFlush();
     glutSwapBuffers();
