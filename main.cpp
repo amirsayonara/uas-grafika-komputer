@@ -105,13 +105,13 @@ void dasar() {
     glPopMatrix();
 }
 
-void tombol_kipas(int tekan) {
+void tombol_kipas(int tekan, bool stop) {
     glPushMatrix();
     glTranslated(-1.5,-7,2);
     for (int x=0; x<4; x++) {
-        if (tekan==x) glTranslated(0,-0.2,0);
+        if (tekan==x|(stop & x==3)) glTranslated(0,-0.2,0);
         glutSolidCube(0.5);
-        if (tekan==x) glTranslated(0,0.2,0);
+        if (tekan==x|(stop & x==3)) glTranslated(0,0.2,0);
         glTranslated(1,0,0);
     }
     glPopMatrix();
@@ -213,7 +213,7 @@ void display(void)
     glMatrixMode(GL_MODELVIEW);
 
     dasar();
-    tombol_kipas(-1);
+    tombol_kipas(-1, false);
     penyangga();
     kepala();
     baling_baling();
