@@ -271,8 +271,14 @@ void keyboard(unsigned char key, int x, int y)
         break;
     case '0':
         tombol_level = -1;
+        tombol_stop = true;
         break;
     }
+    glutPostRedisplay();
+}
+
+void keyUP(unsigned char key, int x, int y) {
+    if (key=='0') tombol_stop = false;
     glutPostRedisplay();
 }
 
@@ -319,6 +325,7 @@ int main(int argc,char **argv)
     glutReshapeFunc(resize);
     glutKeyboardFunc(keyboard);
     glutSpecialFunc(keyboard2);
+    glutKeyboardUpFunc(keyUP);
     glutMouseFunc(mouse);
     init();
     glutMainLoop();
