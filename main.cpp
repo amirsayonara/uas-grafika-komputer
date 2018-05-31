@@ -213,13 +213,13 @@ void pembungkus() {
     glPopMatrix();
 }
 
-void bagian_atas(int rotasi_toleh, int rotasi_angguk, bool panel_penggerak) {
+void bagian_atas(int rotasi_baling, int rotasi_toleh, int rotasi_angguk, bool panel_penggerak) {
     //angguk maksimal 20
     glPushMatrix();
     glRotated(rotasi_angguk, 1, 0, 0);
     glRotated(rotasi_toleh, 0, 1, 0);
     kepala(panel_penggerak);
-    baling_baling(0);
+    baling_baling(rotasi_baling);
     pembungkus();
     glPopMatrix();
 }
@@ -238,7 +238,7 @@ void display(void)
     dasar();
     tombol_kipas(tombol_level, tombol_stop);
     penyangga();
-    bagian_atas(rotasi_toleh, rotasi_angguk, tekan_panel_atas);
+    bagian_atas(rotasi_baling, rotasi_toleh, rotasi_angguk, tekan_panel_atas);
 
     glFlush();
     glutSwapBuffers();
