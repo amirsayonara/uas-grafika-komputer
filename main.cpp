@@ -262,15 +262,19 @@ void keyboard(unsigned char key, int x, int y)
         break;
     case '1':
         tombol_level = 0;
+        kecepatan_rotasi_baling = 5;
         break;
     case '2':
         tombol_level = 1;
+        kecepatan_rotasi_baling = 7;
         break;
     case '3':
         tombol_level = 2;
+        kecepatan_rotasi_baling = 10;
         break;
     case '0':
         tombol_level = -1;
+        kecepatan_rotasi_baling = 0;
         tombol_stop = true;
         break;
     case 't':
@@ -281,6 +285,7 @@ void keyboard(unsigned char key, int x, int y)
 }
 
 void idle() {
+    rotasi_baling = (rotasi_baling+kecepatan_rotasi_baling)%360;
     glutPostRedisplay();
 }
 
