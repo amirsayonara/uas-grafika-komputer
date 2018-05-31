@@ -281,6 +281,12 @@ void keyboard(unsigned char key, int x, int y)
     case 't':
         if (menoleh) menoleh = false;
         else menoleh = true;
+        break;
+    case 'w':
+        if (rotasi_angguk>0) rotasi_angguk -= 1;
+        break;
+    case 's':
+        if (rotasi_angguk<20) rotasi_angguk += 1;
     }
     glutPostRedisplay();
 }
