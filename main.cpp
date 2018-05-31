@@ -260,9 +260,6 @@ void keyboard(unsigned char key, int x, int y)
     case 'Z':
         glRotated(1,0,0,1);
         break;
-    case GLUT_KEY_UP:
-        cout << 1;
-        break;
     }
     glutPostRedisplay();
 }
