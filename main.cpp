@@ -146,7 +146,7 @@ void penyangga() {
     glPopMatrix();
 }
 
-void kepala() {
+void kepala(bool panel_penggerak) {
     glPushMatrix();
     glTranslated(0,3,-1);
     tabung(1.5,1.5,2.5); //tempat dinamo
@@ -160,6 +160,7 @@ void kepala() {
     tabung(0.5,0.5,1); //leher
 
     glTranslated(1,-0.5,-4.2);
+    if (panel_penggerak) glTranslated(0,0,0.5); //lebih ke bawah jika true
     tabung(0.2,0.2,1); //tombol atas
     glPopMatrix();
 }
@@ -212,12 +213,12 @@ void pembungkus() {
     glPopMatrix();
 }
 
-void bagian_atas(int rotasi_toleh, int rotasi_angguk) {
+void bagian_atas(int rotasi_toleh, int rotasi_angguk, bool panel_penggerak) {
     //angguk maksimal 20
     glPushMatrix();
     glRotated(rotasi_toleh, 0, 1, 0);
     glRotated(rotasi_angguk, 1, 0, 0);
-    kepala();
+    kepala(panel_penggerak);
     baling_baling(0);
     pembungkus();
     glPopMatrix();
@@ -231,7 +232,7 @@ void display(void)
     dasar();
     tombol_kipas(-1, false);
     penyangga();
-    bagian_atas(0, 0);
+    bagian_atas(0, 0, true);
 
     glFlush();
     glutSwapBuffers();
