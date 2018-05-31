@@ -212,6 +212,17 @@ void pembungkus() {
     glPopMatrix();
 }
 
+void bagian_atas(int rotasi_toleh, int rotasi_angguk) {
+    //angguk maksimal 20
+    glPushMatrix();
+    glRotated(rotasi_toleh, 0, 1, 0);
+    glRotated(rotasi_angguk, 1, 0, 0);
+    kepala();
+    baling_baling(0);
+    pembungkus();
+    glPopMatrix();
+}
+
 void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
@@ -220,9 +231,7 @@ void display(void)
     dasar();
     tombol_kipas(-1, false);
     penyangga();
-    kepala();
-    baling_baling(0);
-    pembungkus();
+    bagian_atas(0, 0);
 
     glFlush();
     glutSwapBuffers();
