@@ -1,5 +1,7 @@
 # UAS GRAFIKA KOMPUTER
 >[Copyright (c) 2018 Amir Sayonara](LICENSE)
+
+> Ucapan terima kasih kepada Bapak [Ach. Khozaimi, S.Kom., M.Kom](https://forlap.ristekdikti.go.id/dosen/detail/RDRGNDQwMUUtODU3Qi00NENGLTk5MUUtRjdCMzU1OUFGMzVC) selaku Dosen Pembimbing kami
 ```
 Nama             : MOCH. AMIR
 NIM              : 160411100153
@@ -34,3 +36,8 @@ Perguruan Tinggi : Universitas Trunojoyo Madura
 ### Mouse
 * Scroll atas untuk zoom in seluruh objek
 * Scroll bawah untuk zoom out seluruh objek
+
+### Demo Percobaan
+Menampilkan demo percobaan semua fitur yang dapat dilakukan oleh objek (gerak, pindah, zoom), baik menggunakan event keyboard maupun mouse.
+
+[![Demo Percobaan](https://github.com/amirsayonara/uas-grafika-komputer/blob/master/Screenshoot.png)](http://www.youtube.com/watch?v=iXeHi_TJH1Y 'Demo Percobaan')
