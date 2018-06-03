@@ -146,7 +146,7 @@ void penyangga() {
     glPopMatrix();
 }
 
-void kepala(bool panel_penggerak) {
+void kepala(bool panel_penggerak, float rotasi_toleh) {
     glPushMatrix();
     glTranslated(0,3,-1);
     tabung(1.5,1.5,2.5); //tempat dinamo
@@ -157,7 +157,10 @@ void kepala(bool panel_penggerak) {
     glRotated(90,0,0,1);
     glRotated(-90,0,1,0);
     glTranslated(0.45,0,0);
+
+    glRotated(rotasi_toleh,0,0,1); //netralisasi rotasi toleh agar leher tidak ikut berputar
     tabung(0.5,0.5,1); //leher
+    glRotated(-rotasi_toleh,0,0,1); //akhir netralisasi
 
     glTranslated(1,-0.5,-4.2);
     if (panel_penggerak) glTranslated(0,0,0.5); //lebih ke bawah jika true
@@ -218,7 +221,7 @@ void bagian_atas(int rotasi_baling, int rotasi_toleh, int rotasi_angguk, bool pa
     glPushMatrix();
     glRotated(rotasi_angguk, 1, 0, 0);
     glRotated(rotasi_toleh, 0, 1, 0);
-    kepala(panel_penggerak);
+    kepala(panel_penggerak, rotasi_toleh);
     baling_baling(rotasi_baling);
     pembungkus();
     glPopMatrix();
