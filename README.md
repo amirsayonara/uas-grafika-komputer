@@ -1,4 +1,7 @@
 # UAS GRAFIKA KOMPUTER
+[![Release](https://img.shields.io/github/release/amirsayonara/uas-grafika-komputer)](https://github.com/amirsayonara/uas-grafika-komputer/releases/latest)
+[![License](https://img.shields.io/github/license/amirsayonara/uas-grafika-komputer)](LICENSE)
+[![Twitter Follow](https://img.shields.io/twitter/follow/amir_sayonara)](https://twitter.com/amir_sayonara)
 >[Copyright (c) 2018 Amir Sayonara](LICENSE)
 
 > Ucapan terima kasih kepada Bapak [Ach. Khozaimi, S.Kom., M.Kom](https://forlap.ristekdikti.go.id/dosen/detail/RDRGNDQwMUUtODU3Qi00NENGLTk5MUUtRjdCMzU1OUFGMzVC) selaku Dosen Pembimbing kami
