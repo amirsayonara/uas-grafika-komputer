@@ -229,10 +229,10 @@ void bagian_atas(int rotasi_baling, int rotasi_toleh, int rotasi_angguk, bool pa
 
 bool menoleh = false, tombol_stop,
 menoleh_ke_kanan = true;
-int tombol_level = -1, kecepatan_rotasi_baling = 0,
-rotasi_baling = 0, penambah_rotasi_toleh = 1,
+int tombol_level = -1, penambah_rotasi_toleh = 1,
 rotasi_angguk = 0;
-float rotasi_toleh = 0;
+float rotasi_toleh = 0, kecepatan_rotasi_baling = 0,
+rotasi_baling = 0;
 
 void display(void)
 {
@@ -278,7 +278,6 @@ void keyboard(unsigned char key, int x, int y)
         break;
     case '0':
         tombol_level = -1;
-        kecepatan_rotasi_baling = 0;
         tombol_stop = true;
         break;
     case 't':
@@ -295,7 +294,7 @@ void keyboard(unsigned char key, int x, int y)
 }
 
 void idle() {
-    rotasi_baling = (rotasi_baling+kecepatan_rotasi_baling)%360;
+    rotasi_baling = ((int)rotasi_baling+(int)kecepatan_rotasi_baling)%360;
 
     if (menoleh & tombol_level!=-1) {
         if (menoleh_ke_kanan) {
@@ -305,6 +304,11 @@ void idle() {
             rotasi_toleh -= 0.2;
             if (rotasi_toleh<=-45) menoleh_ke_kanan = true;
         }
+    }
+
+    if (tombol_level==-1) {
+        if (kecepatan_rotasi_baling > 0) kecepatan_rotasi_baling -= 0.01;
+        else kecepatan_rotasi_baling = 0;
     }
 
     glutPostRedisplay();
