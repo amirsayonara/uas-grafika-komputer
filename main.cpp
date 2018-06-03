@@ -307,17 +307,17 @@ void idle() {
         if (kecepatan_rotasi_baling > 0) kecepatan_rotasi_baling -= 0.01;
         else kecepatan_rotasi_baling = 0;
     } else if (tombol_level==0) {
-        if (kecepatan_rotasi_baling > 5) kecepatan_rotasi_baling -= 0.01;
-        else if (kecepatan_rotasi_baling < 5) kecepatan_rotasi_baling += 0.1;
-        if ((int)kecepatan_rotasi_baling==5) kecepatan_rotasi_baling = 5;
-    } else if (tombol_level==1) {
         if (kecepatan_rotasi_baling > 7) kecepatan_rotasi_baling -= 0.01;
         else if (kecepatan_rotasi_baling < 7) kecepatan_rotasi_baling += 0.1;
         if ((int)kecepatan_rotasi_baling==7) kecepatan_rotasi_baling = 7;
-    } else if (tombol_level==2) {
+    } else if (tombol_level==1) {
         if (kecepatan_rotasi_baling > 10) kecepatan_rotasi_baling -= 0.01;
         else if (kecepatan_rotasi_baling < 10) kecepatan_rotasi_baling += 0.1;
         if ((int)kecepatan_rotasi_baling==10) kecepatan_rotasi_baling = 10;
+    } else if (tombol_level==2) {
+        if (kecepatan_rotasi_baling > 15) kecepatan_rotasi_baling -= 0.01;
+        else if (kecepatan_rotasi_baling < 15) kecepatan_rotasi_baling += 0.1;
+        if ((int)kecepatan_rotasi_baling==15) kecepatan_rotasi_baling = 15;
     }
 
     glutPostRedisplay();
